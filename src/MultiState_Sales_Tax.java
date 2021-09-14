@@ -18,22 +18,22 @@ public class MultiState_Sales_Tax {
         double taxrate = .05;
 
 
-        if(state.equals("Wisconsin"))
+        if(state.equals("Wisconsin")||state.equals("wisconsin")) {
             System.out.print("What county do you live in? ");
             Scanner countyInp = new Scanner(System.in);
             String county = countyInp.nextLine();
 
-            if(county.equals("Eau Claire"))
+            if (county.equals("Eau Claire")||county.equals("eau claire")) {
                 taxrate = .055;
 
-
-            if(county.equals("Dun"))
-                taxrate = .054;
-
-
-        if(state.equals("Illinois"))
+            }
+            else if (county.equals("Dane")||county.equals("dane")){
+                    taxrate = .054;
+            }
+        }
+        if(state.equals("Illinois")||state.equals("illinois")) {
             taxrate = .08;
-
+        }
         double tax = (orderAmt * taxrate);
         double total = orderAmt + tax;
 
